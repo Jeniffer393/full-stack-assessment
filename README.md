@@ -14,14 +14,16 @@ Setup Instructions:
        cd <repository_directory>
 
 3. Run Docker Compose:
+   
     docker-compose up --build
+   
    This command starts the frontend (React), backend(Springboot), and Keycloak services defined in the docker-compose.yml file.
 
 5. Verify Keycloak Setup
         Access Keycloak admin console at http://localhost:8180/auth and set up a realm, client, and user as per authentication requirements.
 
 6. Access the Application
-        Frontend application should be accessible at http://localhost:3000
+         Frontend application should be accessible at http://localhost:3000
          Backend API should be accessible at http://localhost:8080/geocento/footprint (Secured, cannot be accessed directly)
          
 7. Authenticate and Use the Application
