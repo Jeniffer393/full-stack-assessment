@@ -24,18 +24,16 @@ Setup Instructions:
 
 4.  Configure Keycloak Setup:
    
-       Access Keycloak admin console at http://localhost:8180/auth and set up a realm, client, and user.
-    
-       Login Administration Console with below details:
+    Login Keycloak Administration Console at http://localhost:8180/auth with below details:
     
                                     username: admin
-                                    password: admin@123
+                                    password: adminuser
     
        Click on create realm under top left dropdown using realm_name as "Geocento".
     
-       Than, goto Realm settings and select partial import from the Action dropdown on Top right corner.
+       Than, goto Realm settings and select partial import from the "Action" dropdown on Top right corner.
     
-       Copy and paste the content of "Geocento-realm" json file inside the Resource file, tick all the resources you want to import and click import.
+       Copy and paste the content of "Geocento-realm.json" file (from Repo) inside the Resource file, tick all the resources you want to import and click import.
     
        Update the password Credentials of user: geouser1 in the Users tab.
 
@@ -49,7 +47,7 @@ Setup Instructions:
 7. Authenticate and Use the Application:
     
       Open the frontend application in your browser.
-      Authenticate using the credentials set up in Keycloak.
+      Authenticate using the geouser1 user credentials set up in Keycloak.
       Once authenticated, the frontend will call the backend API to retrieve geojson footprints and display them on a Leaflet map.
 
 8. API Documentation:
