@@ -1,10 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+}
 
 .toolbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #007bff;
-    color: white;
+    background-color: #b2843f;
+    color: rgb(13, 12, 12);
     position: sticky;
     width: 100%;
     height: 64px;}
@@ -19,8 +24,8 @@
     right: 20px;
     transform: translateY(-50%);
     padding: 10px 20px;
-    background-color: #ffffff;
-    color: #007bff;
+    background-color: #553214;
+    color: #fbfcfd;
     border: none;
     border-radius: 5px;
     cursor: pointer;

@@ -16,8 +16,8 @@ public class SecurityConfig {
         http
                 .authorizeRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/geocento/**").permitAll()
-                                .anyRequest().authenticated()
+                                .requestMatchers("/v3/api-docs/**","/swagger-ui.html", "/swagger-ui/**","v3/api-docs/swagger-config").permitAll()
+                                .requestMatchers("/geocento/**").authenticated()
                 )
                 .oauth2ResourceServer(oauth2ResourceServer ->
                         oauth2ResourceServer

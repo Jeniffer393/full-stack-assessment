@@ -23,7 +23,7 @@ const OpenMap = () => {
   return (
     <div>
       <div className="toolbar">
-        <div className="toolbar-title">GeoCentro</div>
+        <div className="toolbar-title"><strong>GeoCento</strong></div>
         <button className="logout-button" onClick={handleLogout}>
           Logout
         </button>
