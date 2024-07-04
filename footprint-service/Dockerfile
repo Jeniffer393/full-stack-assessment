@@ -5,6 +5,6 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY --from=build /app/target/footprint-service-0.0.1-SNAPSHOT.jar footprint.jar
+COPY --from=build /app/target/footprint-service-0.0.1-SNAPSHOT.jar footprint-service.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "footprint.jar"]
+ENTRYPOINT ["java", "-jar", "footprint-service.jar"]
