@@ -18,7 +18,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - KEYCLOAK_ADMIN=admin
-      - KEYCLOAK_ADMIN_PASSWORD=admin@123
+      - KEYCLOAK_ADMIN_PASSWORD=adminuser
     ports:
       - "8180:8180"
     networks:
