@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16.2
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: keycloak_db
+      POSTGRES_USER: keycloak_db_user
+      POSTGRES_PASSWORD: keycloak_db_user_password
+    networks:
+      - app-network
+  
+  keycloak:
+    build:
+      context: ./keycloak
+      dockerfile: Dockerfile
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    ports:
+      - "8180:8180"
+    networks:
+      - app-network
+    volumes:
+      - keycloak_data:/opt/keycloak/data
+
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - spring-boot-app
+      - keycloak
+    networks:
+      - app-network
+    environment:
+      - REACT_APP_BACKEND_URL=http://spring-boot-app:8080
+      - REACT_APP_KEYCLOAK_URL=http://keycloak:8180/auth
+
+  spring-boot-app:
+    build:
+      context: ./footprint-service
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - KEYCLOAK_SERVER_URL=http://keycloak:8180/auth
+      - KEYCLOAK_REALM=Geocento
+      - KEYCLOAK_CLIENT_ID=GeoFront
+    depends_on:
+      - keycloak
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+    driver: local
+  keycloak_data:
+
+networks:
+  app-network:
+    driver: bridge

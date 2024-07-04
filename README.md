@@ -1,29 +1,35 @@
-# full-stack-assessment
-Assessment exercise for the full stack developer position
+Geojson Footprints Web Service
+------------------------------
 
-## GOAL
+This project implements a secured web client that displays the footprints received from REST API service on map after authenticating the user. The REST API accepts an area of interest in geojson format via POST request and responds with a JSON object containing a list of geojson footprints.
 
-Write a secured service exposing a REST API with one end-point defined as follows
-- POST the area of interest using the geojson format
-- response is a JSON object including a list of footprints (4 lat-long corners for each footprint) using geojson format
+Setup Instructions:
 
-In addition, write a simple web client displaying a map. When the application is loaded it should ask the user to authenticate. Once authenticated, the API should be called and the footprints returned should be displayed on the map.
+1. Ensure Docker Engine is Running
 
-### IMPORTANT
-- the API needs to be secured using a token obtained from a service (Keycloak or other OAuth based services), ideally using a User account
-- the actual backend is a mock, **no need for a DB**. The list of footprints returned can be anything as long as they "make sense" geometrically.
-- use Maven
+2. Clone the Repository :
 
-### BONUS
-- generate the OpenAPI specs and doc page from the code
+    Open a terminal or command prompt and run:
+       git clone <repository_url>
+       cd <repository_directory>
 
-## TIPS and links
-- https://geojson.org/
-- if you decide to use Keycloak https://www.keycloak.org/ also deploy a Keycloak instance using docker compose https://www.keycloak.org/server/containers
-- leaflet display of geojson https://leafletjs.com/examples/geojson/
+3. Run Docker Compose:
 
-## EVALUATION CRITERIA
-The work will be evaluated against the following criteria
-- the evaluator should be able to run a working solution following the README instructions
-- quality of the code and good comments
-- some unit testing (no need to have full code coverage, only to demonstrate the ability to write tests)
+    docker-compose up --build
+
+        This command starts the frontend (React), backend(Springboot), and Keycloak services defined in the docker-compose.yml file.
+
+4. Verify Keycloak Setup
+        Access Keycloak admin console at http://localhost:8180/auth and set up a realm, client, and user as per authentication requirements.
+
+5. Access the Application
+        Frontend application should be accessible at http://localhost:3000
+         Backend API should be accessible at http://localhost:8080/geocento/footprint (Secured, cannot be accessed directly)
+         
+6. Authenticate and Use the Application
+        Open the frontend application in your browser.
+        Authenticate using the credentials set up in Keycloak.
+        Once authenticated, the frontend will call the backend API to retrieve geojson footprints and display them on a Leaflet map.
+
+7. API Documentation
+        Access the OpenAPI documentation at http://localhost:8080/swagger-ui.html 
