@@ -10,10 +10,11 @@ Setup Instructions:
 2. Clone the Repository :
 
     Open a terminal or command prompt and run:
-       git clone <repository_url>
+   
+       git clone https://github.com/Jeniffer393/full-stack-assessment.git
        cd <repository_directory>
 
-3. Run Docker Compose:
+4. Run Docker Compose:
    
     docker-compose up --build
    
