@@ -11,8 +11,8 @@ Setup Instructions:
 
     Open a terminal or command prompt and run:
    
-       git clone https://github.com/Jeniffer393/full-stack-assessment.git
-       cd <repository_directory>
+       git clone https://github.com/geocento/full-stack-assessment.git
+       cd <local_directory>
 
 
 3. Run Docker Compose:
