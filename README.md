@@ -20,17 +20,22 @@ Setup Instructions:
    
    This command starts the frontend (React), backend(Springboot), and Keycloak services defined in the docker-compose.yml file.
 
-6. Verify Keycloak Setup
-        Access Keycloak admin console at http://localhost:8180/auth and set up a realm, client, and user as per authentication requirements.
+6. Verify Keycloak Setup:
+   
+   Access Keycloak admin console at http://localhost:8180/auth and set up a realm, client, and user as per authentication requirements.
 
-7. Access the Application
-         Frontend application should be accessible at http://localhost:3000
-         Backend API should be accessible at http://localhost:8080/geocento/footprint (Secured, cannot be accessed directly)
+8. Access the Application:
+   
+   Frontend application should be accessible at http://localhost:3000
+   
+   Backend API should be accessible at http://localhost:8080/geocento/footprint (Secured, cannot be accessed directly)
          
-8. Authenticate and Use the Application
-        Open the frontend application in your browser.
-        Authenticate using the credentials set up in Keycloak.
-        Once authenticated, the frontend will call the backend API to retrieve geojson footprints and display them on a Leaflet map.
+10. Authenticate and Use the Application:
+    
+    Open the frontend application in your browser.
+    Authenticate using the credentials set up in Keycloak.
+    Once authenticated, the frontend will call the backend API to retrieve geojson footprints and display them on a Leaflet map.
 
-9. API Documentation
-        Access the OpenAPI documentation at http://localhost:8080/swagger-ui.html 
+12. API Documentation:
+
+    Access the OpenAPI documentation at http://localhost:8080/swagger-ui.html 
