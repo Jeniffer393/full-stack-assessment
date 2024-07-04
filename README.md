@@ -25,12 +25,18 @@ Setup Instructions:
 4.  Configure Keycloak Setup:
    
        Access Keycloak admin console at http://localhost:8180/auth and set up a realm, client, and user.
+    
        Login Administration Console with below details:
-          username: admin
-          password: admin@123
+    
+                                    username: admin
+                                    password: admin@123
+    
        Click on create realm under top left dropdown using realm_name as "Geocento".
+    
        Than, goto Realm settings and select partial import from the Action dropdown on Top right corner.
+    
        Copy and paste the content of "Geocento-realm" json file inside the Resource file and click import.
+    
        Update the password Credentials of user: geouser1 in the Users tab.
 
 6. Access the Application:
