@@ -35,7 +35,7 @@ Setup Instructions:
     
        Than, goto Realm settings and select partial import from the Action dropdown on Top right corner.
     
-       Copy and paste the content of "Geocento-realm" json file inside the Resource file and click import.
+       Copy and paste the content of "Geocento-realm" json file inside the Resource file, tick all the resources you want to import and click import.
     
        Update the password Credentials of user: geouser1 in the Users tab.
 
